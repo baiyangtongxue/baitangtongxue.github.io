@@ -1,0 +1,194 @@
+/* 
+	
+ */
+
+*{
+    /* 初始化 */
+    margin:0;
+    padding: 0;
+}
+
+body{
+    /* 100%窗口高度 */
+    height:100vh;
+    /* 弹性布局 居中*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 背景颜色渐变 */
+	background: radial-gradient(#e66465, #9198e5);
+}
+
+/* 文字样式 绝对式布局*/
+.words{
+	/* 以下注释代码是文字布局时候用 */
+	/* 边框颜色 边框实线 边框大小 */
+	/* border: 1px solid blue; */
+	
+	/* 绝对定位 盒子位置用left 和 bottom 进行调整*/
+	width: 355px;
+	height: 350px;
+	position:absolute;
+	left:150px;
+	bottom:100px;
+ }
+
+/* 最外层样式 绝对式布局*/
+.container{
+	/* 以下注释代码是图片布局时候用 */
+    /* 边框颜色 边框实线 边框大小 */
+    /* border: 1px solid red; */
+	
+	/* 绝对定位 盒子位置用left 和 bottom 进行调整*/
+	width: 500px;
+	height: 100px;
+	position:absolute;
+	left:750px;
+	bottom:285px;
+ }
+
+/* 外层图片设置 */
+.out-div img{
+    width: 200px;
+    height: 200px;
+    /* 对图片进行剪切，保留原始比例 */
+    object-fit: cover;
+}
+
+/* 里层图片设置 */
+.in-div img{
+    width: 100px;
+    height: 100px;
+    /* 对图片进行剪切，保留原始比例 */
+    object-fit: cover;
+}
+
+/* 盒子 */
+.box{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    /* 开启3D效果 */
+    transform-style: preserve-3d;
+    /* 执行动画：动画名 时长 线性的 无限次播放 */
+    animation: liuxiaoyi 10s linear infinite;
+}
+
+/* 外层div的统一样式 */
+.out-div{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    /* 动画过渡 */
+    transition: transform 1s ease-in;
+}
+
+/* 外层div单独样式 */
+/* 前 */
+.out-front{
+    transform: translateZ(100px);
+}
+
+/* 后 */
+.out-back{
+    transform: translateZ(-100px) rotateY(180deg);
+}
+
+/* 左 */
+.out-left{
+    transform: translateX(-100px) rotateY(-90deg);
+}
+/* 右 */
+.out-right{
+    transform: translateX(100px) rotateY(90deg);
+}
+
+/* 上 */
+.out-top{
+    transform: translateY(-100px) rotateX(90deg);
+}
+
+/* 下 */
+.out-bottom{
+    transform: translateY(100px) rotateX(-90deg);
+}
+
+/* 鼠标移入，外层图片样式变化 */
+/* 前 */
+.container:hover .out-front{
+    transform: translateZ(200px);
+}
+
+/* 后 */
+.container:hover .out-back{
+    transform: translateZ(-200px) rotateY(180deg);
+}
+
+/* 左 */
+.container:hover .out-left{
+    transform: translateX(-200px) rotateY(-90deg);
+}
+
+/* 右 */
+.container:hover .out-right{
+    transform: translateX(200px) rotateY(90deg);
+}
+
+/* 上 */
+.container:hover .out-top{
+    transform: translateY(-200px) rotateX(90deg);
+}
+/* 下 */
+.container:hover .out-bottom{
+    transform: translateY(200px) rotateX(-90deg);
+}
+
+/* 里层div的统一样式 */
+.in-div{
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+
+/* 里层div单独样式 */
+/* 前 */
+.in-front{
+    transform: translateZ(50px);
+}
+
+/* 后 */
+.in-back{
+    transform: translateZ(-50px) rotateY(180deg);
+}
+
+/* 左 */
+.in-left{
+    transform: translateX(-50px) rotateY(-90deg);
+}
+/* 右 */
+.in-right{
+    transform: translateX(50px) rotateY(90deg);
+}
+
+/* 上 */
+.in-top{
+    transform: translateY(-50px) rotateX(90deg);
+}
+
+/* 下 */
+.in-bottom{
+    transform: translateY(50px) rotateX(-90deg);
+}
+
+/* 定义动画 */
+@keyframes liuxiaoyi {
+    0%{
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100%{
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
